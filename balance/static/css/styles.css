@@ -14,3 +14,18 @@ nav {
   line-height: 25px;
   padding-left: 25px;
 }
+
+main {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+table.paper {
+  width: 100%;
+}
+
+.titulo-tabla {
+  border-bottom: solid thin #19a187;
+  text-align: left;
+}

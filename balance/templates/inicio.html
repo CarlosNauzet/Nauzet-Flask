@@ -13,22 +13,24 @@
 
     <nav>Inicio | Nuevo</nav>
 
-    <table class="lista">
-      <tr>
-        <th>Fecha</th>
-        <th>Concepto</th>
-        <th>Tipo</th>
-        <th>Cantidad</th>
-      </tr>
-      {% for m in movs %}
-      <tr>
-        <td>{{ m.fecha }}</td>
-        <td>{{ m.concepto }}</td>
-        <td>{{ m.ingreso_gasto }}</td>
-        <td>{{ m.cantidad }}</td>
-      </tr>
-      {% endfor %}
-    </table>
+    <main>
+      <table class="paper">
+        <tr>
+          <th class="titulo-tabla">Fecha</th>
+          <th class="titulo-tabla">Concepto</th>
+          <th class="titulo-tabla">Tipo</th>
+          <th class="titulo-tabla">Cantidad</th>
+        </tr>
+        {% for m in movs %}
+        <tr>
+          <td>{{ m.fecha }}</td>
+          <td>{{ m.concepto }}</td>
+          <td>{{ m.ingreso_gasto }}</td>
+          <td>{{ m.cantidad }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </main>
 
     <footer>2023 Bootcamp desde cero</footer>
   </body>
