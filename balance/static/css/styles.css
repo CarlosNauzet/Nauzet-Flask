@@ -29,3 +29,12 @@ table.paper {
   border-bottom: solid thin #19a187;
   text-align: left;
 }
+
+.numero {
+  text-align: right;
+}
+
+.pie-pagina {
+  padding: 20px;
+  border-top: solid thin #b8174c;
+}

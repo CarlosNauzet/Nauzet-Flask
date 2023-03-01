@@ -19,19 +19,19 @@
           <th class="titulo-tabla">Fecha</th>
           <th class="titulo-tabla">Concepto</th>
           <th class="titulo-tabla">Tipo</th>
-          <th class="titulo-tabla">Cantidad</th>
+          <th class="titulo-tabla numero">Cantidad</th>
         </tr>
         {% for m in movs %}
         <tr>
           <td>{{ m.fecha }}</td>
           <td>{{ m.concepto }}</td>
           <td>{{ m.ingreso_gasto }}</td>
-          <td>{{ m.cantidad }}</td>
+          <td class="numero">{{ m.cantidad }}</td>
         </tr>
         {% endfor %}
       </table>
     </main>
 
-    <footer>2023 Bootcamp desde cero</footer>
+    <footer class="pie-pagina">2023 Bootcamp desde cero</footer>
   </body>
 </html>
