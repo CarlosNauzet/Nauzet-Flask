@@ -34,6 +34,11 @@ table.paper {
   text-align: right;
 }
 
+.lista-vacia {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
 .pie-pagina {
   padding: 20px;
   border-top: solid thin #b8174c;

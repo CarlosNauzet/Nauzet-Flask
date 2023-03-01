@@ -21,7 +21,7 @@
           <th class="titulo-tabla">Tipo</th>
           <th class="titulo-tabla numero">Cantidad</th>
         </tr>
-        {% for m in movs %}
+        {% if movs %} {% for m in movs %}
         <tr>
           <td>{{ m.fecha }}</td>
           <td>{{ m.concepto }}</td>
@@ -30,7 +30,13 @@
           </td>
           <td class="numero">{{ m.cantidad }}</td>
         </tr>
-        {% endfor %}
+        {% endfor %} {% else %}
+        <tr>
+          <td colspan="4" class="lista-vacia">
+            No hay movimientos para mostrar
+          </td>
+          {% endif %}
+        </tr>
       </table>
     </main>
 
