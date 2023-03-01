@@ -25,7 +25,9 @@
         <tr>
           <td>{{ m.fecha }}</td>
           <td>{{ m.concepto }}</td>
-          <td>{{ m.ingreso_gasto }}</td>
+          <td>
+            {% if m.ingreso_gasto == 'I' %} Ingreso {% else %} Gasto {% endif %}
+          </td>
           <td class="numero">{{ m.cantidad }}</td>
         </tr>
         {% endfor %}
