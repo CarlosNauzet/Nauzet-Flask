@@ -10,12 +10,14 @@ Para que esto nos funciones correctamente necesitamos dos variables de entorno:
 
 -Linux/Mac
     export FLASK_APP=hello
-    export FLASK_ENVIRONMENT=development
+    export FLASK_ENV=development (obsoleto)
+    export FLASK_DEBUG=True
+
 
 -Windows
     set FLASK_APP=hello
-    set FLASK_ENVIRONMENT=developement
-
+    set FLASK_ENV=developement (obsoleto)
+    set FLASK_DEBUG=True
 """
 
 
