@@ -6,3 +6,11 @@ header {
   line-height: 50px;
   padding-left: 25px;
 }
+
+nav {
+  background-color: #19a187;
+  color: white;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 25px;
+}
