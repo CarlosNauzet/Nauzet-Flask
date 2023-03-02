@@ -12,7 +12,7 @@ def home():
     lista = ListaMovimientos()
     lista.leer_desde_archivo()
     
-    return render_template("inicio.html", movs = lista.lista_movimientos)
+    return render_template("inicio.html", movs = lista.movimientos)
 
 @app.route('/nuevo')
 def add_movement():

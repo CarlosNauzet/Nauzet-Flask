@@ -84,6 +84,6 @@ table.paper {
   margin-right: 2rem;
 }
 
-.campo-formulario input:not ([type="radio"]) {
+.campo-formulario input:not [type="radio"] {
   width: 100%;
 }
