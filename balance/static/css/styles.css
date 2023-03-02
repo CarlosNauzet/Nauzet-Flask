@@ -14,6 +14,13 @@ nav {
   line-height: 25px;
   padding-left: 25px;
 }
+nav a,
+nav a:active,
+nav a:focus,
+nav a:hover,
+nav a:visited {
+  color: white;
+}
 
 main {
   max-width: 600px;
