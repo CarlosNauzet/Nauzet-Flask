@@ -1,5 +1,47 @@
-{% extends "base.html" %} {% block contenido %} Aquí debe ir el formulario para
-crear un movimiento {% endblock %} {% block page_title %}
+{% extends "base.html" %}
+<!---->
+{% block head_title %} {{ super() }}: Nuevo movimiento - {% endblock head_title
+%}
+
+<!---->
+{% block page_title %}
 <h1>Crear nuevo movimiento</h1>
-{% endblock page_title %} {% block head_title %} {{ super() }}: Nuevo movimiento
-- {% endblock head_title %}
+{% endblock page_title %}
+
+<!---->
+{% block contenido %}
+
+<form action="/nuevo" method="get">
+  <div class="campo-formulario">
+    <label for="fecha">Fecha</label>
+    <input type="date" name="date" id="fecha" />
+  </div>
+
+  <div class="campo-formulario">
+    <label for="hora">Hora</label>
+    <input type="time" name="time" id="hora" />
+  </div>
+
+  <div class="campo-formulario">
+    <label for="concepto">Concepto</label>
+    <input type="text" name="subject" id="concepto" />
+  </div>
+
+  <div class="campo-formulario">
+    <input type="radio" name="mov_type" id="ingreso" value="I" />
+    <label for="ingeso">Ingreso</label>
+    <input type="radio" name="mov_type" id="gasto" value="G" />
+    <label for="gasto">Gasto</label>
+  </div>
+
+  <div class="campo-formulario">
+    <label for="cantidad">Cantidad</label>
+    <input type="number" name="quantity" id="cantidad" />
+  </div>
+
+  <div class="acciones">
+    <button type="submit">Enviar</button>
+  </div>
+</form>
+
+{% endblock %}
