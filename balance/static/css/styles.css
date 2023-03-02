@@ -34,6 +34,13 @@ table.paper {
   text-align: right;
 }
 
+.error {
+  color: #b8174c;
+  font-size: small;
+  margin: 0;
+  line-height: normal;
+}
+
 .lista-vacia {
   text-align: center;
   padding: 20px;
