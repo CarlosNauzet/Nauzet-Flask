@@ -26,6 +26,7 @@ class Movimiento:
         self.tipo = tipo
         self.cantidad = cantidad
 
+    @property
     def has_errors(self):
         return len(self.errores) > 0
     

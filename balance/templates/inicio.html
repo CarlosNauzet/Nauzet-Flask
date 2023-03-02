@@ -30,7 +30,16 @@
           </td>
           <td class="numero">{{ m.cantidad }}</td>
         </tr>
-        {% endfor %} {% else %}
+        {% if m.has_errors %}
+        <tr>
+          <td></td>
+          <td colspan="3">
+            {% for error in m.errores %}
+            <p class="error">{{ error }}</p>
+            {% endfor %}
+          </td>
+        </tr>
+        {% endif %} {% endfor %} {% else %}
         <tr>
           <td colspan="4" class="lista-vacia">
             No hay movimientos para mostrar
