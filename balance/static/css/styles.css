@@ -1,5 +1,15 @@
+:root {
+  --primary-color: #b8174c;
+  --secondary-color: #19a187;
+
+  --medium-gray: #666;
+  --error-color: var(--primary-color);
+
+  --default-border: solid thin var(--secondary-color);
+}
+
 header {
-  background-color: #b8174c;
+  background-color: var(--primary-color);
   color: white;
   height: 50px;
   font-size: large;
@@ -8,7 +18,7 @@ header {
 }
 
 nav {
-  background-color: #19a187;
+  background-color: var(--secondary-color);
   color: white;
   height: 25px;
   line-height: 25px;
@@ -33,7 +43,7 @@ table.paper {
 }
 
 .titulo-tabla {
-  border-bottom: solid thin #19a187;
+  border-bottom: var(--default-border);
   text-align: left;
 }
 
@@ -42,7 +52,7 @@ table.paper {
 }
 
 .error {
-  color: #b8174c;
+  color: var(--error-color);
   font-size: small;
   margin: 0;
   line-height: normal;
@@ -51,9 +61,9 @@ table.paper {
 .lista-vacia {
   text-align: center;
   padding: 20px;
-  color: #666;
+  color: var(--medium-gray);
 }
 .pie-pagina {
   padding: 20px;
-  border-top: solid thin #b8174c;
+  border-top: var(--default-border);
 }
