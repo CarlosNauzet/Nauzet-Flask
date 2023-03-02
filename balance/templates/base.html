@@ -10,9 +10,8 @@
   </head>
 
   <body>
-    <header>Balance de movimientos</header>
-
-    <nav><a href="/">Inicio</a> | <a href="/nuevo">Nuevo</a></nav>
+    {% include 'components/header.html' %} {% include 'components/navbar.html'
+    %}
 
     <main>
       {% block page_title %}
@@ -20,6 +19,6 @@
       {% endblock page_title %} {% block contenido %} {% endblock %}
     </main>
 
-    <footer class="pie-pagina">2023 Bootcamp desde cero</footer>
+    {% include 'components/footer.html' %}
   </body>
 </html>
