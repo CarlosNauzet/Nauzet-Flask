@@ -9,15 +9,31 @@ Un movimiento debe tener:
 
 
 import csv
+from datetime import date
 
 from . import RUTA_FICHERO
 
 class Movimiento:
     def __init__(self, fecha, concepto, tipo, cantidad):
-        self.fecha = fecha
+        self.errores = []
+
+        try:
+            self.fecha = date.fromisoformat(fecha)
+        except ValueError:
+            self.fecha = None
+            self.errores.append("El formato de la fecha no es válido")
         self.concepto = concepto
         self.tipo = tipo
         self.cantidad = cantidad
+
+    def has_errors(self):
+        return len(self.errores) > 0
+    
+    def __str__(self):
+        return f'{self.fecha}\t{self.concepto}\t{self.tipo}\t{self.cantidad}'
+    
+    def __repr__(self):
+        return self.__str__()
 
 
 class ListaMovimientos:
@@ -31,4 +47,8 @@ class ListaMovimientos:
         with open(RUTA_FICHERO, 'r') as fichero:
             reader = csv.DictReader(fichero)
             for fila in reader:
-                self.lista_movimientos.append(fila)
+                mov = Movimiento(fila["fecha"], 
+                                 fila["concepto"], 
+                                 fila["ingreso_gasto"], 
+                                 fila["cantidad"])
+                self.lista_movimientos.append(mov)
