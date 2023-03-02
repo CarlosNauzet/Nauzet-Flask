@@ -67,3 +67,23 @@ table.paper {
   padding: 20px;
   border-top: var(--default-border);
 }
+
+/* Estilos de formulario */
+
+.campo-formulario label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.campo-formulario .radio-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 2rem;
+}
+
+.campo-formulario input:not ([type="radio"]) {
+  width: 100%;
+}
