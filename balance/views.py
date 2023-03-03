@@ -32,6 +32,8 @@ def add_movement():
     if request.method == 'POST':
         datos = request.form
         movimiento = Movimiento(datos)
+        if movimiento.has_errors:
+            return f'Error en el nuevo movimiento. {movimiento.errores}'
         lista = ListaMovimientos()
         lista.leer_desde_archivo()
         lista.agregar(movimiento)
