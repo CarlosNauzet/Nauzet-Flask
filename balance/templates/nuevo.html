@@ -11,32 +11,32 @@
 <!---->
 {% block contenido %}
 
-<form action="/nuevo" method="get">
+<form action="/nuevo" method="post">
   <div class="campo-formulario">
     <label for="fecha">Fecha</label>
-    <input type="date" name="date" id="fecha" />
+    <input type="date" name="fecha" id="fecha" />
   </div>
 
   <div class="campo-formulario">
     <label for="hora">Hora</label>
-    <input type="time" name="time" id="hora" />
+    <input type="time" name="hora" id="hora" />
   </div>
 
   <div class="campo-formulario">
     <label for="concepto">Concepto</label>
-    <input type="text" name="subject" id="concepto" />
+    <input type="text" name="concepto" id="concepto" />
   </div>
 
   <div class="campo-formulario">
-    <input type="radio" name="mov_type" id="ingreso" value="I" />
+    <input type="radio" name="tipo" id="ingreso" value="I" />
     <label for="ingreso" class="radio-label">Ingreso</label>
-    <input type="radio" name="mov_type" id="gasto" value="G" />
+    <input type="radio" name="tipo" id="gasto" value="G" />
     <label for="gasto" class="radio-label">Gasto</label>
   </div>
 
   <div class="campo-formulario">
     <label for="cantidad">Cantidad</label>
-    <input type="number" name="quantity" id="cantidad" />
+    <input type="number" name="cantidad" id="cantidad" />
   </div>
 
   <div class="acciones">

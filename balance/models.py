@@ -16,8 +16,13 @@ from . import RUTA_FICHERO
 CLAVES_IGNORADAS = ['errores']
 
 class Movimiento:
-    def __init__(self, fecha, concepto, tipo, cantidad):
+    def __init__(self, dic_datos):
         self.errores = []
+
+        fecha = dic_datos['fecha']
+        concepto = dic_datos['concepto']
+        tipo = dic_datos['tipo']
+        cantidad = dic_datos['cantidad']
 
         try:
             self.fecha = date.fromisoformat(fecha)
@@ -58,10 +63,7 @@ class ListaMovimientos:
         with open(RUTA_FICHERO, 'r') as fichero:
             reader = csv.DictReader(fichero)
             for fila in reader:
-                mov = Movimiento(fila["fecha"], 
-                                 fila["concepto"], 
-                                 fila["tipo"], 
-                                 fila["cantidad"])
+                mov = Movimiento(fila)
                 self.movimientos.append(mov)
 
     def agregar(self, movimiento):
