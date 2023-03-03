@@ -13,6 +13,8 @@ from datetime import date
 
 from . import RUTA_FICHERO
 
+CLAVES_IGNORADAS = ['errores']
+
 class Movimiento:
     def __init__(self, fecha, concepto, tipo, cantidad):
         self.errores = []
@@ -54,9 +56,42 @@ class ListaMovimientos:
             for fila in reader:
                 mov = Movimiento(fila["fecha"], 
                                  fila["concepto"], 
-                                 fila["ingreso_gasto"], 
+                                 fila["tipo"], 
                                  fila["cantidad"])
                 self.movimientos.append(mov)
+
+    def agregar(self, movimiento):
+        """
+        Agrega el movimiento a la lista y actualiza el archivo CSV.
+        """
+        if not isinstance(movimiento, Movimiento):
+            raise ValueError("No puedes agregar nada que no sea un movimiento")
+        self.movimientos.append(movimiento)
+        self.guardar_archivo()
+
+    def guardar_archivo(self):
+        """
+        Actualiza el arcvhivo CSV con los movmientos que hay en la lista de movimientos.
+
+        1. Vacía el archivo CSV
+        2. Escribe la línea de cabecera con el nombre de los campos
+        3. Escribe los movimentos uno a uno en el archivo CSV
+        """
+        with open('RUTA_FICHERO', 'w') as csvfile:
+            fieldnames = list(self.movimientos[0].__dict__.keys())
+            for clave in CLAVES_IGNORADAS:
+                fieldnames.remove(clave)
+
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            writer.writeheader()
+
+            for mov in self.movimientos:
+                mov_dict = mov.__dict__
+                for clave in CLAVES_IGNORADAS:
+                    mov_dict.pop(clave)
+                writer.writerow(mov_dict)
+           
 
     def __str__(self):
         """
@@ -73,4 +108,4 @@ class ListaMovimientos:
     
     def __repr__(self):
         conteo = len(self.movimientos)
-        return f'Lista de movimientso con {conteo} movimientos'
+        return f'Lista de movimientos con {conteo} movimientos'

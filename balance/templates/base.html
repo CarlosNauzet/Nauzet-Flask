@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block head_title %}Balance App{% endblock head_title %}</title>
-    <link rel="stylesheet" href="static/css/flat-remix.css" />
-    <link rel="stylesheet" href="static/css/styles.css" />
-  </head>
 
-  <body>
-    {% include 'components/header.html' %} {% include 'components/navbar.html'
-    %}
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block head_title %}Balance App{% endblock head_title %}</title>
+  <link rel="stylesheet" href="static/css/flat-remix.css" />
+  <link rel="stylesheet" href="static/css/styles.css" />
+</head>
 
-    <main>
-      {% block page_title %}
-      <h1>App de movimientos</h1>
-      {% endblock page_title %} {% block contenido %} {% endblock %}
-    </main>
+<body>
+  {% include 'components/header.html' %}
+  {% include 'components/navbar.html' %}
 
-    {% include 'components/footer.html' %}
-  </body>
+
+  <main>
+    {% block page_title %}
+    <h1>App de movimientos</h1>
+    {% endblock page_title %}
+    {% block contenido %}
+    {% endblock %}
+  </main>
+
+  {% include 'components/footer.html' %}
+</body>
+
 </html>
