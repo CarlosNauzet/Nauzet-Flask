@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import redirect, render_template, request, url_for
 
 from . import app
 from .models import ListaMovimientos, Movimiento
@@ -35,7 +35,7 @@ def add_movement():
         lista = ListaMovimientos()
         lista.leer_desde_archivo()
         lista.agregar(movimiento)
-        return f"{datos} <br><br> {movimiento}"
+        return redirect(url_for('home'))
 
 @app.route('/modificar')
 def update():

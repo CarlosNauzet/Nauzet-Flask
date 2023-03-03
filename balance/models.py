@@ -101,7 +101,7 @@ class ListaMovimientos:
 
     def __str__(self):
         """
-        Pinta la lista de movimientos por pantall (consola)
+        Pinta la lista de movimientos por pantalla (consola)
         """
         if len(self.movimientos) > 0:
             resultado = ""
